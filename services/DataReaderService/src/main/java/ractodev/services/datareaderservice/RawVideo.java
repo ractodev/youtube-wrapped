@@ -9,6 +9,10 @@ import java.util.List;
  * available directly in the Google Takeout data.
  */
 public class RawVideo {
+    /*
+        TODO: "title" found in Takeout file contains additional text such as "Tittade på ...".
+              Maybe avoid this by enriching a Youtube supplied title?
+    */
     private final String title;
     private final String channel;
     private final String url;
@@ -66,10 +70,6 @@ public class RawVideo {
 
     @Override
     public String toString() {
-        return "{" +
-                "title='" + title + '\'' +
-                "\nchannel='" + channel + '\'' +
-                "\nurl='" + url + '\'' +
-                '}';
+        return "{title: " + title + ", Channel: " + channel + ", URL: " + url + "}";
     }
 }

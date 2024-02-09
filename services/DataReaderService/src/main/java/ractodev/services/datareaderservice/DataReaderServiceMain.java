@@ -1,9 +1,16 @@
 package ractodev.services.datareaderservice;
 
-public class Main {
-    public static void main(String[] args) {
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
 
-        System.out.println("Hello World!");
+public class DataReaderServiceMain {
+    public static void main(String[] args) throws IOException {
+        GoogleTakeoutFileReader reader = new GoogleTakeoutFileReader(new File(args[0]));
+        List<RawVideo> rawVideos = reader.processTakeoutFile();
+        for (RawVideo video : rawVideos) {
+            System.out.println(video.toString());
+        }
 
     }
 }
