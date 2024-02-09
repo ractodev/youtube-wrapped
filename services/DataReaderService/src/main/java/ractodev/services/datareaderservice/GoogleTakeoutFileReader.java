@@ -30,8 +30,7 @@ public class GoogleTakeoutFileReader {
      * @return List of raw video objects if input file is valid, null otherwise
      */
     public List<RawVideo> processTakeoutFile() throws IOException {
-        boolean validFile = verifyTakeoutFile();
-        if (validFile) {
+        if (takeoutFileExists()) {
             return deserializeTakeoutData();
         } else {
             return null;
@@ -39,13 +38,12 @@ public class GoogleTakeoutFileReader {
     }
 
     /**
-     * Function that verifies the integrity of Takeout file by checking that it is
-     * accessible and readable.
+     * Function that verifies that the Takeout file exists by checking that
+     * it is accessible and readable.
      *
-     * @return true if valid, false otherwise
+     * @return true if it exists, false otherwise
      */
-    public boolean verifyTakeoutFile() {
-        //TODO: Further checks to ensure JSON integrity
+    public boolean takeoutFileExists() {
         return takeoutFile.isFile() && takeoutFile.canRead();
     }
 
