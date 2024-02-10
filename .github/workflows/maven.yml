@@ -20,14 +20,8 @@ jobs:
         distribution: 'temurin'
         cache: maven
         
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
-
-    - name: Build Docker Images
-      run: docker-compose build
-
-    - name: Run Docker Container
-      run: docker-compose up
+    - name: Build and Run Docker Containers
+      run: docker-compose up --build -d
 
     - name: Clean up Docker
       run: docker-compose down
