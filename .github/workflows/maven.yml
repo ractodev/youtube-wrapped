@@ -10,11 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    services:
-      docker:
-        image: data-reader-service:latest
-        options: --privileged
-
     steps:
     - uses: actions/checkout@v3
     
@@ -33,4 +28,7 @@ jobs:
 
     - name: Run Docker Container
       run: docker-compose up
+
+    - name: Clean up Docker
+      run: docker-compose down
       
