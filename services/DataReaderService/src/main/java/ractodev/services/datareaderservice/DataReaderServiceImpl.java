@@ -30,13 +30,15 @@ public class DataReaderServiceImpl extends DataReaderServiceGrpc.DataReaderServi
      *
      * @return List of raw video objects
      */
-    public List<RawVideo> getRawVideos() throws IOException {
+    public List<RawVideo> getRawVideos() {
+        System.out.println("Reading file: " + filePath);
         GoogleTakeoutFileReader reader = new GoogleTakeoutFileReader(new File(filePath));
+        System.out.println("Processing file...");
         return reader.processTakeoutFile();
     }
 
     @Override
-    public void getRawVideos(RawVideoOuterClass.Empty request, StreamObserver<RawVideoOuterClass.RawVideo> responseObserver) throws IOException {
+    public void getRawVideos(RawVideoOuterClass.Empty request, StreamObserver<RawVideoOuterClass.RawVideo> responseObserver) {
         List<RawVideo> rawVideos = getRawVideos();
         for (RawVideo rawVideo : rawVideos) {
             responseObserver.onNext(RawVideoOuterClass.RawVideo.newBuilder()

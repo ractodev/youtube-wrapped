@@ -1,14 +1,20 @@
 version: '3.8'
 services:
+  shared:
+    build:
+      context: ./services/shared
+      dockerfile: Dockerfile
   data-reader-service:
+    depends_on:
+      - shared
     image: data-reader-service:latest
     build:
       context: ./services/DataReaderService
       dockerfile: Dockerfile
     environment:
       - SPRING_PROFILES_ACTIVE=dev
+      - INPUT_FILE_PATH=/app/history.json
     volumes:
       - ./history.json:/app/history.json
     command: [ "java", "-jar", "/app/data-reader-service.jar", "/app/partial_history.json" ]
-
   # Space to add more services later (e.g. another-service: etc.)

@@ -30,10 +30,15 @@ public class GoogleTakeoutFileReader {
      *
      * @return List of raw video objects if input file is valid, null otherwise
      */
-    public List<RawVideo> processTakeoutFile() throws IOException {
-        if (takeoutFileExists()) {
-            return deserializeTakeoutData();
-        } else {
+    public List<RawVideo> processTakeoutFile() {
+        try {
+            if (takeoutFileExists()) {
+                return deserializeTakeoutData();
+            } else {
+                return null;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
             return null;
         }
     }
@@ -53,6 +58,7 @@ public class GoogleTakeoutFileReader {
      * to a raw video object.
      *
      * @return List of raw videos
+     * @throws IOException if there is an error reading the file
      */
     public List<RawVideo> deserializeTakeoutData() throws IOException {
         ObjectMapper mapper = new ObjectMapper()
