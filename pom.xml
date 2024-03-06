@@ -12,6 +12,8 @@
     <name>Parent Pom</name>
     <modules>
         <module>services/DataReaderService</module>
+        <module>services/shared</module>
+        <!-- Space to add more services -->
     </modules>
 
     <properties>

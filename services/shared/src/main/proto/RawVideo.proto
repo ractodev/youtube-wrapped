@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ractodev.services.datareaderservice;
+option java_package = "com.ractodev.services.datareaderservice";
+
+service DataReaderService {
+  rpc GetRawVideos (Empty) returns (stream RawVideo) {}
+}
+
+message RawVideo {
+  string id = 1;
+}
+
+message Empty {}

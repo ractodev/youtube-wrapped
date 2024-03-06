@@ -1,11 +1,12 @@
 package ractodev.services.datareaderservice;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -55,9 +56,22 @@ public class GoogleTakeoutFileReader {
      */
     public List<RawVideo> deserializeTakeoutData() throws IOException {
         ObjectMapper mapper = new ObjectMapper()
-                .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);                             // ignore unknown properties in Takeout data
-        return mapper.readValue(takeoutFile, new TypeReference<List<RawVideo>>() {
-        });
+                .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false); // ignore unknown properties in Takeout data
+        List<RawVideo> rawVideos = new ArrayList<>();
+
+        JsonNode node = mapper.readTree(takeoutFile);
+        if (node != null && node.isArray()) {
+            for (JsonNode item : node) {
+                JsonNode titleUrlNode = item.get("titleUrl");
+                if (titleUrlNode != null) {
+                    String titleUrl = titleUrlNode.asText();
+                    String id = titleUrl.substring(titleUrl.indexOf("=") + 1);
+                    rawVideos.add(new RawVideo(id));
+                }
+            }
+        }
+
+        return rawVideos;
     }
 
 }
