@@ -13,8 +13,7 @@ services:
       dockerfile: Dockerfile
     environment:
       - SPRING_PROFILES_ACTIVE=dev
-      - INPUT_FILE_PATH=/app/history.json
     volumes:
       - ./history.json:/app/history.json
-    command: [ "java", "-jar", "/app/data-reader-service.jar", "/app/partial_history.json" ]
+    command: [ "/app/history.json" ]
   # Space to add more services later (e.g. another-service: etc.)

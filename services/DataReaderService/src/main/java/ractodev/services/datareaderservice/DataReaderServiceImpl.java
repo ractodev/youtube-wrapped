@@ -34,6 +34,7 @@ public class DataReaderServiceImpl extends DataReaderServiceGrpc.DataReaderServi
         System.out.println("Reading file: " + filePath);
         GoogleTakeoutFileReader reader = new GoogleTakeoutFileReader(new File(filePath));
         System.out.println("Processing file...");
+        System.out.println("Result: " + reader.processTakeoutFile());
         return reader.processTakeoutFile();
     }
 

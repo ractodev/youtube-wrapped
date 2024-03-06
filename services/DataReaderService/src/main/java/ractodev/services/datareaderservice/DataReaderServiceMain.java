@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Bean;
 public class DataReaderServiceMain {
 
     public static void main(String[] args) {
-        System.out.println("DataReaderServiceMain is starting...");
         SpringApplication.run(DataReaderServiceMain.class, args);
     }
 
