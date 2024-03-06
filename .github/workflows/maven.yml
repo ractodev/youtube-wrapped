@@ -13,10 +13,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up JDK 21
+    - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
-        java-version: '21'
+        java-version: '17'
         distribution: 'temurin'
         cache: maven
 
@@ -26,6 +26,11 @@ jobs:
     - name: Build and Run Docker Containers
       run: docker-compose up --build -d
 
+    - name: List running containers
+      run: docker ps
+
+    - name: List proto files
+      run: docker exec shared ls -l /app
+
     - name: Clean up Docker
       run: docker-compose down
-      
