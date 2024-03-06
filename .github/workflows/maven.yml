@@ -21,7 +21,8 @@ jobs:
         cache: maven
 
     - name: Build with Maven
-      run: mvn -B -X package --file pom.xml
+      run: mvn -B package --file pom.xml
+      working-directory: services/DataReaderService
 
     - name: Build and Run Docker Containers
       run: docker-compose up --build -d
