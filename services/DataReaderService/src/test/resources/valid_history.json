@@ -1,0 +1,56 @@
+[
+  {
+    "header": "YouTube",
+    "title": "Example Title 1",
+    "titleUrl": "https://www.youtube.com/watch?v\u003d1",
+    "subtitles": [
+      {
+        "name": "Example Channel 1",
+        "url": "Example Url 1"
+      }
+    ],
+    "time": "2024-02-08T14:40:01.763Z",
+    "products": [
+      "YouTube"
+    ],
+    "activityControls": [
+      "Watch history on YouTube"
+    ]
+  },
+  {
+    "header": "YouTube",
+    "title": "Example Title 2",
+    "titleUrl": "https://www.youtube.com/watch?v\u003d2",
+    "subtitles": [
+      {
+        "name": "Example Channel 2",
+        "url": "Example Url 2"
+      }
+    ],
+    "time": "2024-02-08T14:40:01.763Z",
+    "products": [
+      "YouTube"
+    ],
+    "activityControls": [
+      "Watch history on YouTube"
+    ]
+  },
+  {
+    "header": "YouTube",
+    "title": "Example Title 3",
+    "titleUrl": "https://www.youtube.com/watch?v\u003d3",
+    "subtitles": [
+      {
+        "name": "Example Channel 3",
+        "url": "Example Url 3"
+      }
+    ],
+    "time": "2024-02-08T14:40:01.763Z",
+    "products": [
+      "YouTube"
+    ],
+    "activityControls": [
+      "Watch history on YouTube"
+    ]
+  }
+]
