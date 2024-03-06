@@ -26,5 +26,5 @@ replay_pid*
 # Others
 .idea
 **/target/
-history.json
+watch_history.json
 partial_history.json

@@ -17,5 +17,7 @@ _NOTE: This is an ongoing project. Data enrichment service to be added shortly._
 
 ## Usage
 
-1. Place the `watch-history.json` file at the root of this project.
-2. Run.
+1. Place the `watch-history.json` file in the root directory of the project.
+2. Run `docker-compose build` to build the images.
+3. Run `docker-compose up` to start the containers.
+4. Enjoy!
