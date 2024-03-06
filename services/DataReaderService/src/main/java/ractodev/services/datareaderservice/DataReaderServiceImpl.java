@@ -1,12 +1,11 @@
 package ractodev.services.datareaderservice;
 
-import net.devh.boot.grpc.server.service.GrpcService;
 import com.ractodev.services.datareaderservice.DataReaderServiceGrpc;
 import com.ractodev.services.datareaderservice.RawVideoOuterClass;
 import io.grpc.stub.StreamObserver;
+import net.devh.boot.grpc.server.service.GrpcService;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 /**
