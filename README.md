@@ -3,6 +3,9 @@ A project designed to emulate features similar to Spotify Wrapped, but for YouTu
 
 _NOTE: This is an ongoing project. Data enrichment service to be added shortly._
 
+## Architecture Schematic
+![Layout](Layout.jpg)
+
 ## Prerequisites
 
 ### Google Takeout
@@ -15,9 +18,3 @@ _NOTE: This is an ongoing project. Data enrichment service to be added shortly._
 6. Download the generated archive when it's ready.
 7. Extract the `watch-history.json` file from the archive. If you have downloaded your Takeout data in any other language, rename the corresponding file to **watch-history.json**.
 
-## Usage
-
-1. Place the `watch-history.json` file in the root directory of the project.
-2. Run `docker-compose build` to build the images.
-3. Run `docker-compose up` to start the containers.
-4. Enjoy!
