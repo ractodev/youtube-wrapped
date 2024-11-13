@@ -4,7 +4,8 @@ A project designed to emulate features similar to Spotify Wrapped, but for YouTu
 _NOTE: This is an ongoing project. Data enrichment service to be added shortly._
 
 ## Architecture Schematic
-![Layout](Layout.jpg)
+
+![Architecture](Architecture.jpg)
 
 ## Prerequisites
 
